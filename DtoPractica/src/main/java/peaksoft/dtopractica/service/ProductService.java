@@ -1,10 +1,8 @@
 package peaksoft.dtopractica.service;
 
-import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import peaksoft.dtopractica.dto.ProductDTO;
-import peaksoft.dtopractica.entity.Market;
 import peaksoft.dtopractica.entity.Product;
 import peaksoft.dtopractica.repository.ProductRepository;
 
@@ -28,16 +26,16 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    public Product update(Product product){
-        return productRepository.save(product);
-    }
+//    public Product update(Product produ    public void assingProductToMarket(Market market){
+//       productRepository.findById(market.getId())
+//               .orElseThrow(() -> new EntityNotFoundException("Market not found with id: " + market.getId()));
+//        market.setProducts(market.getProducts());
+//    }ct){
+//        return productRepository.save(product);
+// }
 
     public void delete(Long id){
          productRepository.deleteById(id);
     }
-    public void assingProductToMarket(Market market){
-       productRepository.findById(market.getId())
-               .orElseThrow(() -> new EntityNotFoundException("Market not found with id: " + market.getId()));
-        market.setProducts(market.getProducts());
-    }
+//
 }
