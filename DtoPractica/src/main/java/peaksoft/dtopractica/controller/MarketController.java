@@ -9,8 +9,6 @@ import peaksoft.dtopractica.dto.MarketDTO;
 import peaksoft.dtopractica.entity.Market;
 import peaksoft.dtopractica.repository.MarketRepository;
 import peaksoft.dtopractica.service.MarketService;
-import peaksoft.dtopractica.service.ProductService;
-
 import java.util.List;
 
 @RestController
