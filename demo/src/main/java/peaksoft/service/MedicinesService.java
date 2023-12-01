@@ -1,4 +1,4 @@
-package service;
+package peaksoft.service;
 
 import peaksoft.model.Medicines;
 

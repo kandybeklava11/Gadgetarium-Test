@@ -1,4 +1,4 @@
-package Api;
+package peaksoft.Api;
 
 public class PharmacyApi {
 }

@@ -1,4 +1,4 @@
-package service.impl;
+package peaksoft.service.impl;
 
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
@@ -6,8 +6,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import peaksoft.model.Pharmacy;
-import repo.PharmacyRepo;
-import service.PharmacyService;
+import peaksoft.model.Worker;
+import peaksoft.repo.PharmacyRepo;
+import peaksoft.repo.WorkerRepo;
+import peaksoft.service.PharmacyService;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,6 +22,8 @@ import java.util.Optional;
 public class PharmacyServiceImpl implements PharmacyService {
     @Autowired
     private PharmacyRepo pharmacyRepo;
+    @Autowired
+    private WorkerRepo workerRepo;
 
 
     @Override
@@ -44,7 +48,7 @@ public class PharmacyServiceImpl implements PharmacyService {
 
     @Override
     public void delete(Long pharmacyId) {
-    pharmacyRepo.deleteById(pharmacyId);
+        pharmacyRepo.deleteById(pharmacyId);
     }
 
     @Override
@@ -68,11 +72,11 @@ public class PharmacyServiceImpl implements PharmacyService {
 
     @Override
     public List<Pharmacy> getPharmacyByWorkerId(Long id) {
-        Optional<Pharmacy> optionalPharmacy = pharmacyRepo.findById(id);
+        Optional<Worker> optionalWorker = workerRepo.findById(id);
 
-        if (optionalPharmacy.isPresent()) {
-             Pharmacy pharmacy1 = optionalPharmacy.get();
-            return pharmacyRepo.findAllByWorker(pharmacy1);
+        if (optionalWorker.isPresent()) {
+            Worker worker = optionalWorker.get();
+            return pharmacyRepo.findAllByWorkers(worker);
         } else {
             throw new EntityNotFoundException("Worker not found for id: " + id);
         }

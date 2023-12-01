@@ -1,4 +1,4 @@
-package repo;
+package peaksoft.repo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
@@ -10,7 +10,7 @@ import java.util.List;
 @RepositoryRestResource(path = "workers")
 
 public interface WorkerRepo extends JpaRepository<Worker,Long> {
-    List<Worker> findAllByWorker(Worker worker);
+    List<Worker> findAllByPharmacy(Pharmacy pharmacy);
     List<Worker> findAllByOrderBySalaryAsc();
     List<Worker> findAllByOrderBySalaryDesc();
 }

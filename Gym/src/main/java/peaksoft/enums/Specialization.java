@@ -1,2 +1,4 @@
-package peaksoft.enums;public enum Specialization {
+package peaksoft.enums;
+
+public enum Specialization {
 }

@@ -1,4 +1,4 @@
-package repo;
+package peaksoft.repo;
 
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -11,17 +11,19 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
 public class Worker {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
     @Column(unique = true)
     private String email;
+
     private int salary;
     private String address;
     private LocalDate dateOfBirth;
-//    @ManyToOne
-//    private Pharmacy pharmacy;
+
+    @ManyToOne
+    private Pharmacy pharmacy;
 }

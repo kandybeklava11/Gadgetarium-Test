@@ -1,11 +1,11 @@
-package service.impl;
+package peaksoft.service.impl;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import peaksoft.model.Medicines;
-import repo.MedicinesRepo;
-import service.MedicinesService;
+import peaksoft.repo.MedicinesRepo;
+import peaksoft.service.MedicinesService;
 
 import java.util.List;
 import java.util.Optional;

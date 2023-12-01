@@ -11,7 +11,6 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
 public class Pharmacy {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,9 +18,9 @@ public class Pharmacy {
     private String name;
     private String address;
 
-//    @ManyToMany
-//    private List<Medicines>medicines;
-//    @OneToMany(mappedBy = "pharmacy")
-//    List<Worker> workers;
+    @ManyToMany
+    private List<Medicines> medicines;
 
+    @OneToMany
+    private List<Worker> workers;
 }
