@@ -2,26 +2,23 @@ package peaksoft.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
-import java.util.List;
 
 @Entity
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@RequiredArgsConstructor
 
-public class Pharmacy {
+
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String address;
-
-//    @ManyToMany
-//    private List<Medicines>medicines;
-//    @OneToMany(mappedBy = "pharmacy")
-//    List<Worker> workers;
-
+    private String firstName;
+    private String lastName;
+    private String userName;
+    private String password;
+    private Boolean isActive;
 }
